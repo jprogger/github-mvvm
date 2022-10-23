@@ -1,20 +1,35 @@
+package plugins
+
+import Versions
+import com.android.build.gradle.LibraryExtension
+
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.kapt")
     id("org.jetbrains.kotlin.android")
     id("androidx.navigation.safeargs.kotlin")
 }
 
-android {
+configure<LibraryExtension> {
+    namespace = Versions.applicationId
     compileSdk = Versions.compileSdkVersion
     buildToolsVersion = Versions.buildToolsVersion
-
     defaultConfig {
-        multiDexEnabled = true
         minSdk = Versions.minSdkVersion
-        versionName = Versions.versionName
-        versionCode = Versions.versionCode
         targetSdk = Versions.targetSdkVersion
-        applicationId = Versions.applicationId
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
 }

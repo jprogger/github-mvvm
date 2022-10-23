@@ -10,8 +10,24 @@ buildscript {
 
     dependencies {
         classpath("com.android.tools.build:gradle:${Versions.gradlePluginVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinVersion}")
         classpath("org.jetbrains.kotlin.kapt:org.jetbrains.kotlin.kapt.gradle.plugin:${Versions.kotlinVersion}")
         classpath("org.jetbrains.kotlin.android:org.jetbrains.kotlin.android.gradle.plugin:${Versions.kotlinVersion}")
         classpath("androidx.navigation.safeargs.kotlin:androidx.navigation.safeargs.kotlin.gradle.plugin:${Versions.navigationArgsPluginVersion}")
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven("https://maven.google.com")
+        maven("https://plugins.gradle.org/m2/")
+    }
+}
+
+getTasksByName("clean", false).forEach {
+    it.doLast {
+        delete(rootProject.buildDir)
     }
 }

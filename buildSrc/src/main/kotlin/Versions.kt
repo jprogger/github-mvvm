@@ -26,7 +26,7 @@ object Versions {
     // App Compat
     const val appCompatVersion = "1.5.1"
 
-    const val fragmentVersion = "1.5.2"
+    const val fragmentVersion = "1.5.3"
     const val lifecycleVersion = "2.5.1"
 
     // Retrofit
