@@ -1,5 +1,6 @@
 plugins {
     id("plugins.common-library")
+    id("org.jetbrains.kotlin.plugin.serialization") version Versions.kotlinVersion
 }
 
 dependencies {
@@ -10,6 +11,7 @@ dependencies {
     // Dagger 2
     kapt("com.google.dagger:dagger-compiler:${Versions.daggerVersion}")
     kapt("com.google.dagger:dagger-android-processor:${Versions.daggerVersion}")
+
     implementation("com.google.dagger:dagger-android:${Versions.daggerVersion}")
     implementation("com.google.dagger:dagger-android-support:${Versions.daggerVersion}")
 
@@ -18,6 +20,7 @@ dependencies {
 
     //Retrofit2
     implementation("com.squareup.retrofit2:retrofit:${Versions.retrofitVersion}")
+    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:${ Versions.retrofitKotlinJsonVersion }")
 
     //OkHttp (Retrofit dependency)
     implementation("com.squareup.okhttp3:okhttp:${Versions.okhttpVersion}")
