@@ -10,6 +10,8 @@ dependencies {
     // Dagger 2
     kapt("com.google.dagger:dagger-compiler:${Versions.daggerVersion}")
     kapt("com.google.dagger:dagger-android-processor:${Versions.daggerVersion}")
+    implementation("com.google.dagger:dagger-android:${Versions.daggerVersion}")
+    implementation("com.google.dagger:dagger-android-support:${Versions.daggerVersion}")
 
     // Kotlin Json Serialization
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${ Versions.kotlinSerialJsonVersion }")
