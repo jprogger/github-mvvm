@@ -7,6 +7,10 @@ dependencies {
     implementation("androidx.appcompat:appcompat:${ Versions.appCompatVersion }")
     implementation("com.google.android.material:material:${ Versions.materialVersion }")
 
+    // Dagger 2
+    kapt("com.google.dagger:dagger-compiler:${Versions.daggerVersion}")
+    kapt("com.google.dagger:dagger-android-processor:${Versions.daggerVersion}")
+
     // Kotlin Json Serialization
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${ Versions.kotlinSerialJsonVersion }")
 
